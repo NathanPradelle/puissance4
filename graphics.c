@@ -1,6 +1,9 @@
 #include <stdio.h>
 
-void grid(int rows, int columns, short **map){
+void grid(int rows, int columns, short **map, int cursor){
+    for(int i = 0; i < 16 ; i++){
+        printf("\n");
+    }
     for(int i = 0; i < rows ; i++){
             for(int j = 0; j < columns  ; j++){
                 char c;    
@@ -16,8 +19,16 @@ void grid(int rows, int columns, short **map){
                                 break;  
                         }
                         printf("| %c ", c);
-                        printf("%d ", map[i][j]);
                     }
                     printf("|\n");
                 }
+    for(int i = 0; i < columns; i++){
+        printf("----");
+    }
+    printf("\n");
+    for(int i = 0; i < cursor; i++){
+        printf("    ");
+    }
+    printf("\033[0;35m <o>");
+    printf("\033[0;37m");
 }
