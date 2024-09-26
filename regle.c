@@ -62,10 +62,10 @@ int win (int **map, int taille, int columns, int rows){
 
 int **tour(int **map,int play,int joueurId, int longueur ){
     int i=0;
-    while (map[play][i]==0||i!=(longueur+1)){
+    while (map[play][i+1]==0||i!=(longueur)){
         i++;
     }
-    map[play][i-1]=joueurId;
+    map[play][i]=joueurId;
     return map;
 }
 
