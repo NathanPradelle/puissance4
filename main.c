@@ -5,11 +5,12 @@
 int main(){
     int columns = 7;
     int rows = 6;
-    printf("hello");
-    short **map = malloc(sizeof(short) * rows);
+    short **map = (short**) malloc(sizeof(short*) * rows);
     for(int i = 0; i <rows; i++){
-        map[i] = malloc(sizeof(short) * columns);
+        map[i] = (short*) calloc(columns, sizeof(short));
     }
+    map[0][0] = 1;
+    grid(rows, columns, map);
 
 
     return -1;
