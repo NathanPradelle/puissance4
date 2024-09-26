@@ -3,9 +3,11 @@
 #include <string.h>
 #include "graphics.c"
 #include "structure.c"
+#include "playerInput.c"
 
 
 int main(){
+<<<<<<< HEAD
 
     int userCount = 0;
     
@@ -66,6 +68,6 @@ int main(){
         }
         printf("\n");
     }
-    
+
     return 0;
 }
