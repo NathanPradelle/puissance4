@@ -5,9 +5,8 @@
 typedef struct {
     char *name;
     short order;
-    short color;
-    char pawn;
-
+    char *color;
+    char *pawn;
 } User;
 
 typedef struct {
@@ -17,17 +16,23 @@ typedef struct {
     short **grid;
 } Map;
 
-User *createUser(char *name, short order, short color, char pawn){
+User *createUser(char *name, short order, char *color, char *pawn){
 
     User *user = malloc(sizeof(User));
 
-    char *Username = malloc(sizeof(char) * (strlen(name) + 1));
-    strcpy(Username, name);
+    char *userName = malloc(sizeof(char) * (strlen(name) + 1));
+    strcpy(userName, name);
 
-    user->name = Username;
+    char *colorString = malloc(sizeof(char) * (strlen(color) + 1));
+    strcpy(colorString, color);
+
+    char *pawnString = malloc(sizeof(char) * (strlen(pawn) + 1));
+    strcpy(pawnString, pawn);
+
+    user->name = userName;
     user->order = order;
-    user->color = color;
-    user->pawn = pawn;
+    user->color = colorString;
+    user->pawn = pawnString;
     
     return user;
 }
